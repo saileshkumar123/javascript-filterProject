@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        overflow-x:hidden;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+        background-color: rgb(149, 214, 192);
+      }
+      .btn button {
+        padding: 0px 10px;
+        font-size: 20px;
+        border-radius: 5px;
+      }
+      .ipn {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+      }
+      .ipn input {
+        color: rgb(8, 4, 4);
+        border: 2px solid rgb(21, 197, 30);
+        padding: 10px;
+      }
+      /* ---------- */
+img{
+    object-fit: cover;
+    width:200px;
+    padding: 10px;
+}
+
+      .product-main-details{
+        width: 90%;
+        margin: auto;
+        background-color: gray;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        padding: 20px;
+        gap: 10px;
+        border-radius: 10px;
+      }
+      .product{
+        margin: 10px;
+        background-color: aquamarine;
+        text-align: center;
+        border-radius: 5px;
+      }
+      span{
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- -------------------navbar----------------- -->
+    <nav>
+      <div class="logo">
+        <h1>Filter project</h1>
+      </div>
+      <div class="btn">
+        <button>Contact Us</button>
+      </div>
+    </nav>
+
+    <!-- ---------------First Page------------- -->
+
+    <section class="first">
+      <div class="ipn">
+        <label>Mobile Phone Search</label>
+        <input type="text" placeholder="Filter" id="inp" onkeyup="filter()">
+      </div>
+
+      <div class="product-main-details">
+        <div class="product">
+          <img src="1.jpeg" />
+          <h1>Samsung Galaxy A12</h1>
+          <h2>Rs :<span>12,000</span></h2>
+        </div>
+
+        <div class="product">
+          <img src="2.jpeg" />
+          <h1>Redmi 12 Smartphone</h1>
+          <h2>Rs :<span>15,000</span></h2>
+        </div>
+
+        <div class="product">
+          <img src="3.jpeg" />
+          <h1>Redmi A3 128 GB,</h1>
+          <h2>Rs :<span>18,000</span></h2>
+        </div>
+
+        <div class="product">
+          <img src="4.jpeg" />
+          <h1>Samsung Galaxy A35</h1>
+          <h2>Rs :<span>25,000</span></h2>
+        </div>
+
+        <div class="product">
+          <img src="5.jpeg" />
+          <h1>IAIR D19 Dual Sim Basic Feature</h1>
+          <h2>Rs :<span>28,000</span></h2>
+        </div>
+
+        <div class="product">
+          <img src="6.jpeg" />
+          <h1>Apple iPhone 15 Pro Max</h1>
+          <h2>Rs :<span>10,000</span></h2>
+        </div>
+
+        <div class="product">
+          <img src="7.jpeg" />
+          <h1>Google Pixel 8 Pro</h1>
+          <h2>Rs :<span>14,000</span></h2>
+        </div>
+
+        <div class="product">
+            <img src="1.jpeg" />
+            <h1>OnePlus 11</h1>
+            <h2>Rs :<span>29,000</span></h2>
+          </div>
+
+          <div class="product">
+            <img src="9.jpeg" />
+            <h1>Xiaomi 13 Pro</h1>
+            <h2>Rs :<span>35,000</span></h2>
+          </div>
+
+          <div class="product">
+            <img src="10.jpeg" />
+            <h1>Samsung Galaxy Z Fold 5</h1>
+            <h2>Rs :<span>22,000</span></h2>
+          </div>
+
+          <div class="product">
+            <img src="11.jpeg" />
+            <h1>iPhone SE (3rd generation)</h1>
+            <h2>Rs :<span>24,000</span></h2>
+          </div>
+
+          <div class="product">
+            <img src="12.jpeg" />
+            <h1>Vivo X90 Pro</h1>
+            <h2>Rs :<span>17,000</span></h2>
+          </div>
+
+          <div class="product">
+            <img src="13.jpeg" />
+            <h1>Oppo Find X6 Pro</h1>
+            <h2>Rs :<span>19,000</span></h2>
+          </div>
+
+          <div class="product">
+            <img src="14.jpeg" />
+            <h1>Realme GT 3</h1>
+            <h2>Rs :<span>14,000</span></h2>
+          </div>
+
+          <div class="product">
+            <img src="15.jpeg" />
+            <h1>Micromax A12</h1>
+            <h2>Rs :<span>19,000</span></h2>
+          </div>
+      </div>
+    </section>
+
+    <script>
+
+function filter(){
+    let ipvalue=document.getElementById("inp").value.toUpperCase();
+    let product=document.querySelectorAll(".product");
+    let tag=document.getElementsByTagName("h1");
+
+    for(i=0;i<=tag.length;i++){
+        var abs=product[i].getElementsByTagName("h1")[0];
+        if(abs){
+              var value=abs.innerHTML ||abs.innerText ;
+              if(value.toUpperCase().indexOf(ipvalue)>-1){
+                  product[i].style.display="block";
+              } 
+              else{
+                product[i].style.display="none";
+              }
+        }
+    }
+}
+
+
+
+
+    </script>
+  </body>
+</html>
